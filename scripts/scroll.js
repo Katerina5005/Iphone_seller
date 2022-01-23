@@ -1,4 +1,6 @@
 const links = document.querySelectorAll('.header-menu__item a')
+const linkCharacteristics = document.querySelector('.card-details__link-characteristics')
+const newArray = [...links, linkCharacteristics]
 
 links.forEach((element) => {
     element.addEventListener('click', (event) => {
