@@ -1,60 +1,56 @@
 const tabsFunc = () => {
-    const tabs = document.querySelectorAll('.card-detail__change'),
-      tabsTitle = document.querySelector('.card-details__title'),
-      tabsPrice = document.querySelector('.card-details__price'),
-      tabsImage = document.querySelector('.card-image__item')
+  const tabs = document.querySelectorAll(".card-detail__change"),
+    tabsTitle = document.querySelector(".card-details__title"),
+    tabsPrice = document.querySelector(".card-details__price"),
+    tabsImage = document.querySelector(".card-image__item");
 
-
-
-const tabsOptions = [
+  const tabsOptions = [
     {
-        name: "Graphite",
-        memory: '128',
-        price: 60000,
-        image: 'img/iPhone-graphite.webp'
+      name: "Graphite",
+      memory: 128,
+      price: 60000,
+      image: "img/iPhone-graphite.webp"
     },
     {
-        name: "Silver",
-        memory: '256',
-        price: 65000,
-        image: 'img/iPhone-silver.webp'
+      name: "Silver",
+      memory: 256,
+      price: 65000,
+      image: "img/iPhone-silver.webp"
     },
     {
-        name: "Sierra Blue",
-        memory: '512',
-        price: 70000,
-        image: 'img/iPhone-sierra_blue.webp'
-    }
-]
+      name: "Sierra Blue",
+      memory: 512,
+      price: 70000,
+      image: "img/iPhone-sierra_blue.webp"
+    },
+  ];
 
-const changeContent = (index) => {
-    tabsTitle.textContent = `Смартфон Apple iPhone 13 Pro ${tabsOptions[index].memory}GB ${tabsOptions[index].name}`
-    tabsPrice.textContent = `${tabsOptions[index].price}₽`
+  const changeContent = (index) => {
+    tabsTitle.textContent = `Смартфон Apple iPhone 13 Pro ${tabsOptions[index].memory}GB ${tabsOptions[index].name}`;
+    tabsPrice.textContent = `${tabsOptions[index].price}₽`;
 
-    tabsImage.setAttribute('src', tabsOptions[index].image)
+    tabsImage.setAttribute("src", tabsOptions[index].image);
+  };
 
-}
-
-const changeActiveTabs = (indexClickedTab) => {
+  const changeActiveTabs = (indexClickedTab) => {
     tabs.forEach((tab, index) => {
-        tab.classList.remove('active')
+      tab.classList.remove("active");
 
-        if (index === indexClickedTab) {
-            tab.classList.add('active')
-        }
-    })
+      if (index === indexClickedTab) {
+        tab.classList.add("active");
+      }
+    });
 
-    changeContent(indexClickedTab)
-}
+    changeContent(indexClickedTab);
+  };
 
-tabs.forEach((tab, index) => {
-    tab.addEventListener('click', () => {
-        changeActiveTabs(index)
-    })
-})
+  tabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => {
+      changeActiveTabs(index);
+    });
+  });
 
-changeContent(0)
-}
+  changeContent(0);
+};
 
-tabsFunc()
-
+tabsFunc();
